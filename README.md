@@ -1,6 +1,6 @@
 ## CPP-DSA-Udemy-Course
 
-Notes from the Udemy course - C++ Data Structures & Algorithms + LEETCODE Exercises
+Notes from the Udemy course - [C++ Data Structures & Algorithms + LEETCODE Exercises](https://www.udemy.com/course/data-structures-algorithms-cpp/learn/lecture)
 
 ## Section 3: Big 0
 
