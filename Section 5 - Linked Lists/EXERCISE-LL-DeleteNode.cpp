@@ -158,14 +158,23 @@ class LinkedList {
             return true;
         }       
 
-        // WRITE DELETENODE MEMBER FUNCTION HERE //
-        //                                       //
-        //                                       //
-        //                                       //
-        //                                       //
-        //                                       //
-        ///////////////////////////////////////////
+        void deleteNode(int index) {
+            if(index < 0 || index >= length) {
+                return;
+            }
 
+            if (index == 0) {
+                deleteFirst();
+            } else if (index == length - 1) {
+                deleteLast();
+            } else {
+                auto previous = get(index - 1);
+                auto target = previous->next;
+                previous->next = target->next;
+                delete target;
+                length--;
+            }
+        }
 };
 
 

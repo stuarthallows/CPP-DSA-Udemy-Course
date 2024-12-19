@@ -97,13 +97,18 @@ class LinkedList {
             length--;            
         }
 
-        // WRITE PREPEND MEMBER FUNCTION HERE //
-        //                                    //
-        //                                    //
-        //                                    //
-        //                                    //
-        //                                    //
-        ////////////////////////////////////////        
+        void prepend(int value) {
+            auto newNode = new Node(value);
+
+            if (length == 0) {
+                head = tail = newNode;
+            } else {
+                newNode->next = head;
+                head = newNode;
+            }
+
+            ++length;
+        }
 
 };
 

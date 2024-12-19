@@ -131,13 +131,16 @@ class LinkedList {
             return temp;
         }
 
-        // WRITE SET MEMBER FUCTION HERE //
-        //                               //
-        //                               //
-        //                               //
-        //                               //
-        //                               //
-        ///////////////////////////////////        
+        bool set(int index, int value) {
+            auto node = get(index);
+
+            if (node != nullptr) {
+                node->value = value;
+                return true;
+            }
+
+            return false;
+        }
 
 };
 

@@ -140,14 +140,28 @@ class LinkedList {
             return false;
         }
 
- 		// WRITE INSERT MEMBER FUNCTION HERE //
-        //                                   //
-        //                                   //
-        //                                   //
-        //                                   //
-        //                                   //
-        /////////////////////////////////////// 		
+        bool insert(int index, int value) {
+            if (index < 0 || index > length) {
+                return false;
+            }
 
+            if (index == 0) {
+                prepend(value);
+                return true;
+            }
+            
+            if (index == length) {
+                append(value);
+                return true;
+            }
+            
+            auto newNode = new Node(value);
+            auto temp = get(index - 1);
+            newNode->next = temp->next;
+            temp->next = newNode;
+            ++length;
+            return true;
+        }
 };
 
 
@@ -161,7 +175,6 @@ int main() {
     myLinkedList->printList();
 
     
-
     myLinkedList->insert(1, 2);
 
     cout << "\nLL after insert(2) in middle:\n";

@@ -109,13 +109,21 @@ class LinkedList {
             length++;
         }
 
-        // WRITE DELETEFIRST MEMBER FUNCTION HERE //
-        //                                        //
-        //                                        //
-        //                                        //
-        //                                        //
-        //                                        //
-        ////////////////////////////////////////////        
+        void deleteFirst() {
+            if (length == 0) {
+                return;
+            }
+
+            auto temp = head;
+            if (length == 1) {
+                head = tail = nullptr;
+            } else {
+                head = head->next;
+            }
+            delete temp;
+
+            --length;
+        }
 
 };
 

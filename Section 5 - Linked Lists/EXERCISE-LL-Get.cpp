@@ -122,13 +122,18 @@ class LinkedList {
             length--;
         }
 
-        // WRITE GET MEMBER FUCTION HERE //
-        //                               //
-        //                               //
-        //                               //
-        //                               //
-        //                               //
-        ///////////////////////////////////
+        Node* get(int index) {
+            if (index < 0 || index >= length) {
+                return nullptr;
+            }
+
+            auto temp = head;
+            for(int n = 0; n < index; n++) {
+                temp = temp->next;
+            }
+
+            return temp;
+        }
 
 };
 
