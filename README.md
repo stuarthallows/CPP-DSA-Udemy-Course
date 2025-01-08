@@ -18,7 +18,11 @@ O(1) - Constant
 
 https://www.bigocheatsheet.com/
 
-## Section 4: Pointers & Classes
+## Section 16: Hash Tables
+
+Collisions can be handled by
+1. Separate Chaining - storing multiple values per key
+1. Linear Probing, a form of open addressing - storing KVP in next available index
 
 
 
