@@ -24,5 +24,58 @@ Collisions can be handled by
 1. Separate Chaining - storing multiple values per key
 1. Linear Probing, a form of open addressing - storing KVP in next available index
 
+## Section 21: Heaps
+
+Heap: A binary search tree, where the tree is always _complete_ and can contain duplicates. Child nodes are not ordered.
+
+Max heap: Each node has a value that is greater than or equal to its descendants.
+
+Min heap: Each node has a value that is less than or equal to its descendants.
+
+A heap is implemented with a vector, without a node class.
+
+```mermaid
+graph TD;
+    99@{ shape: circle }-->72@{ shape: circle };
+    99-->61@{ shape: circle };
+    72-->58@{ shape: circle };
+    72-->55@{ shape: circle };
+    61-->27@{ shape: circle };
+    61-->18@{ shape: circle };
+
+    classDef node fill:#1E90FF
+```
+
+This would be stored as a vector, either indexed from 0 or 1.
+
+`| 99 | 72 | 61 | 58 | 55 | 27 | 18 |`
+
+Assuming elements are _indexed from 1_, i.e. index 0 is left empty, to find the children of a node;
+
+```
+leftChild = 2 * parentIndex
+rightChild = 2 * parentIndex + 1
+```
+
+To find the parent of a node, works for right and left child, truncating to int;
+```
+parent = childIndex / 2
+```
+
+Assuming elements are _indexed from 0_, to find the children of a node;
+
+```
+leftChild = 2 * parentIndex + 1
+rightChild = 2 * parentIndex + 2
+```
+
+To find the parent of a node, works for right and left child, truncating to int;
+```
+parent = childIndex - 1 / 2
+```
+
+### Inserting a node
+Node is always inserted at the bottom to keep the tree complete. Then find the correct position by swapping it with it's parent until the parent is larger, or the top of the tree is reached.
+
 
 
