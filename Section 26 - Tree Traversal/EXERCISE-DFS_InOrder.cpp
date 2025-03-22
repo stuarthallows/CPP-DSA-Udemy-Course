@@ -127,15 +127,17 @@ class BinarySearchTree {
         void DFSPostOrder() { DFSPostOrder(root); }
 
 
-		// CREATE DFS_INORDER MEMBER FUNCTION HERE //
-		//                                         //
-		//                                         //
-		//                                         //
-		//                                         //
-		/////////////////////////////////////////////
+        void DFSInOrder(Node* currentNode) {
+            if (currentNode->left != nullptr) {
+                DFSInOrder(currentNode->left);
+            }
+            cout << currentNode->value << " ";
+            if (currentNode->right != nullptr) {
+                DFSInOrder(currentNode->right);
+            }
+        }
 
         void DFSInOrder() { DFSInOrder(root); }
-
 };
 
 

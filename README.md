@@ -79,3 +79,33 @@ Node is always inserted at the bottom to keep the tree complete. Then find the c
 
 
 
+## Section 26: Tree Traversal
+
+
+```mermaid
+graph TD;
+    47@{ shape: circle }-->21@{ shape: circle };
+    47-->76@{ shape: circle };
+    21-->18@{ shape: circle };
+    21-->27@{ shape: circle };
+    76-->52@{ shape: circle };
+    76-->82@{ shape: circle };
+
+    classDef node fill:#1E90FF
+```
+
+BFS output;
+
+`47 21 76 18 27 52 82`
+
+DFS Pre-order traversal output;
+
+`47 21 18 27 76 52 82`
+
+DFS Post-order traversal output;
+
+`18 27 21 52 82 76 47`
+
+DFS In-order traversal output;
+
+`18 21 27 47 52 76 82`
